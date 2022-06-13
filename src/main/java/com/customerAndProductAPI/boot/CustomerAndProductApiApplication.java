@@ -41,11 +41,7 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
 
 		listbook.add(book1);
 		listbook.add(book2);
-		Student student1=new Student();
-		student1.setSname("sams");
-		student1.setSemail("sams@gmail.com");
-		student1.setSbook(listbook);
-
+		Student student1=new Student("sams","sams@gmail.com",listbook);
 		srepo.save(student1);
 
 		List<Book> listbook2=new ArrayList<>();
@@ -60,13 +56,11 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
 		book4.setBname("mobs");
 		book4.setBauthor("xyz");
 		book4.setBprice(350.57);
+
 		listbook2.add(book3);
 		listbook2.add(book4);
 
-		Student stu2=new Student();
-		stu2.setSname("Jay");
-		stu2.setSemail("jay@gmail.com");
-		stu2.setSbook(listbook2);
+		Student stu2=new Student("jay","jay@gmail.com",listbook2);
 		srepo.save(stu2);
 	}
 }
