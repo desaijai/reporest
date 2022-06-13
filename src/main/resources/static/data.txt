@@ -1,0 +1,66 @@
+{
+        "customer":{
+        "cname": "charles",
+        "cemail": "charley@gmail.com",
+        "cgender": "female",
+        "products": [
+            {
+                "pid": 201,
+                "pname": "laptop",
+                "pqty": "1",
+                "pprice": 60000
+            },{
+                "pid": 103,
+                "pname": "mobiles",
+                "pqty": "2",
+                "pprice": 15000.90
+            }
+        ]
+        }
+    }
+
+
+//create student
+{
+        "student":{
+        "sname": "charles",
+        "semail": "charley@gmail.com",
+        "sbook": [
+            {
+                "bid": 201,
+                "bname": "laptop",
+                "bauthor": "xyz",
+                "bprice": 6000
+            },{
+                "bid": 103,
+                "bname": "mobiles",
+                "bauthor": "omeaskm",
+                "bprice": 1500.90
+            }
+        ]
+        }
+    }
+
+
+second record
+{
+        "student":{
+        "sname": "james",
+        "semail": "james@gmail.com",
+        "sbook": [
+            {
+                "bid": 108,
+                "bname": "charges",
+                "bauthor": "abc",
+                "bprice": 569.12
+            },{
+                "bid": 904,
+                "bname": "land of earth",
+                "bauthor": "miasnds",
+                "bprice": 1200.30
+            }
+        ]
+        }
+    }
+
+
