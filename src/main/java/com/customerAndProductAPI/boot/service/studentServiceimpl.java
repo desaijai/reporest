@@ -50,5 +50,10 @@ public class studentServiceimpl implements studentService {
         srepo.delete(student);
     }
 
+    @Override
+    public List<Student> findBysname(String sname) {
+        return srepo.findBysname(sname);
+    }
+
 
 }

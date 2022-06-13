@@ -17,4 +17,6 @@ public interface studentService {
 
     public void deleteStudent(int sid);
 
+    public List<Student> findBysname(String sname);
+
 }

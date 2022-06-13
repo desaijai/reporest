@@ -33,18 +33,23 @@ public class studentController {
     }
 
     @PutMapping("{sid}")
-    public ResponseEntity<Student> updateStudent(@PathVariable("sid")int sid,@RequestBody studentDTO student){
-        return new ResponseEntity<>(sservice.updateStudent(sid,student.getStudent()),HttpStatus.OK);
+    public ResponseEntity<Student> updateStudent(@PathVariable("sid") int sid, @RequestBody studentDTO student) {
+        return new ResponseEntity<>(sservice.updateStudent(sid, student.getStudent()), HttpStatus.OK);
     }
 
-    @GetMapping(value = "{sid}",produces = {"application/json"})
-    public ResponseEntity<Student> getStudentById(@PathVariable("sid") int sid){
+    @GetMapping(value = "{sid}", produces = {"application/json"})
+    public ResponseEntity<Student> getStudentById(@PathVariable("sid") int sid) {
         return new ResponseEntity<>(sservice.getStudentById(sid), HttpStatus.OK);
     }
 
     @DeleteMapping("{sid}")
-    public ResponseEntity<String> deleteStudent(@PathVariable("sid") int sid){
+    public ResponseEntity<String> deleteStudent(@PathVariable("sid") int sid) {
         sservice.deleteStudent(sid);
         return new ResponseEntity<>("Item Deleted Successfully", HttpStatus.OK);
+    }
+
+    @GetMapping(value = "find/{sname}",produces = {"application/json"})
+    public List<Student> findbyStudentName(@PathVariable("sname") String sname){
+        return sservice.findBysname(sname);
     }
 }
