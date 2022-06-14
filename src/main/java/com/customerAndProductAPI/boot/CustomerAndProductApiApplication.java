@@ -2,7 +2,11 @@ package com.customerAndProductAPI.boot;
 
 import com.customerAndProductAPI.boot.model.Book;
 import com.customerAndProductAPI.boot.model.Student;
+import com.customerAndProductAPI.boot.model.post;
+import com.customerAndProductAPI.boot.model.tag;
+import com.customerAndProductAPI.boot.repository.postRepo;
 import com.customerAndProductAPI.boot.repository.studentRepo;
+import com.customerAndProductAPI.boot.repository.tagRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,16 +19,27 @@ import java.util.*;
 @SpringBootApplication
 public class CustomerAndProductApiApplication implements CommandLineRunner {
 
-    @Autowired
-    studentRepo srepo;
-
     public static void main(String[] args) {
         SpringApplication.run(CustomerAndProductApiApplication.class, args);
         System.out.println("hello world");
     }
 
+
     @Override
     public void run(String... args) throws Exception {
+ /*
+        post p1=new post("hibernate many to many mapping example with spring boot","hibernate many to many mapping example with spring boot","hibernate");
+
+        tag t1=new tag("hibernate");
+        tag t2=new tag("java");
+
+        p1.getTags().add(t1);
+        p1.getTags().add(t2);
+
+        t1.getPosts().add(p1);
+        t2.getPosts().add(p1);
+
+        this.prepo.save(p1);
 
         List<Book> listbook = new ArrayList<>();
 
@@ -87,7 +102,7 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
             System.out.println("student name as per email   :- "+email.substring(0,agtindex));
             System.out.println("student domain as per email :- "+email.substring(agtindex+1));
         });
-        /*
+
         listbook.forEach((element) -> {
             System.out.println(element);
         });
