@@ -43,12 +43,12 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
         listbook.add(book1);
         listbook.add(book2);
         Student student1 = new Student("sams", "sams@gmail.com", listbook);
-        srepo.save(student1);
+//        srepo.save(student1);
 
         List<Book> listbook2 = new ArrayList<>();
         Book book3 = new Book();
         book3.setBid(501);
-        book3.setBname("harry porter");
+        book3.setBname("aas");
         book3.setBauthor("milton k.");
         book3.setBprice(8500.50);
 
@@ -66,8 +66,28 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
         listbook.add(book5);
 
         Student stu2 = new Student("jay", "jay@gmail.com", listbook2);
-        srepo.save(stu2);
-/*
+//        srepo.save(stu2);
+
+        Student stu3=new Student("ramesh", "ramesh@yahoo.com",listbook);
+        Student stu4=new Student("chand","chand@mozila.com",listbook2);
+        Student stu5=new Student("arora","arora@google.com",listbook);
+
+        List<Student> listofstudent=new ArrayList<>();
+        listofstudent.add(student1);
+        listofstudent.add(stu2);
+        listofstudent.add(stu3);
+        listofstudent.add(stu4);
+        listofstudent.add(stu5);
+
+        srepo.saveAll(listofstudent);
+
+        listofstudent.forEach((stu)->{
+            String email=stu.getSemail();
+            int agtindex=email.indexOf('@');
+            System.out.println("student name as per email   :- "+email.substring(0,agtindex));
+            System.out.println("student domain as per email :- "+email.substring(agtindex+1));
+        });
+        /*
         listbook.forEach((element) -> {
             System.out.println(element);
         });
@@ -80,7 +100,7 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
         for(Book b:listbook2){
             System.out.println(b);
         }
-        */
+
         System.out.println("--------------------------------------------------");
         listbook2.forEach(
                 (Book) -> System.out.println(Book.getBname()
@@ -130,5 +150,11 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
         int index=email.indexOf('@');
         System.out.println("Username :- "+email.substring(0, index));
         System.out.println("domain :- "+email.substring(index+1));
-    }
+
+        listbook.forEach((Book)->{
+            if(Book.getBname()=="aas"){
+                System.out.println(Book);
+            }
+        });
+*/    }
 }
