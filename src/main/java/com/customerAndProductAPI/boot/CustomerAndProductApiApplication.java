@@ -22,9 +22,17 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(CustomerAndProductApiApplication.class, args);
         System.out.println("hello world");
+
+
+        Map<String,Integer>numbermapping=new HashMap<>();
+        numbermapping.put("one", 1);
+        numbermapping.put("two", 2);
+        numbermapping.put("three", 3);
+        numbermapping.put("four", 4);
+        numbermapping.put("five", 5);
+        numbermapping.put("six", 6);
+        System.out.println(numbermapping);
     }
-
-
     @Override
     public void run(String... args) throws Exception {
  /*
@@ -103,73 +111,6 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
             System.out.println("student domain as per email :- "+email.substring(agtindex+1));
         });
 
-        listbook.forEach((element) -> {
-            System.out.println(element);
-        });
-        System.out.println("--------------------------------------------------");
-        for (Iterator iterator = listbook2.iterator(); iterator.hasNext(); ) {
-            Book book = (Book) iterator.next();
-            System.out.println(book);
-        }
-        System.out.println("--------------------------------------------------");
-        for(Book b:listbook2){
-            System.out.println(b);
-        }
-
-        System.out.println("--------------------------------------------------");
-        listbook2.forEach(
-                (Book) -> System.out.println(Book.getBname()
-                        + "\n" + Book.getBauthor() + "\n" + Book.getBprice() + "\n-----------"
-                ));
-
-        List<Integer> list1 = new ArrayList<>();
-        list1.add(10);
-        list1.add(20);
-        list1.add(30);
-        list1.add(40);
-
-        Collections.sort(list1);
-        System.out.println(list1);
-
-        Collections.reverse(list1);
-        System.out.println(list1);
-
-        Collections.sort(listbook, (b1, b2) -> (int) (b2.getBprice() - b1.getBprice()));
-        System.out.println("-----------------------------");
-        System.out.println(listbook);
-
-        System.out.println("-------------------------------");
-        Collections.sort(listbook,(b1,b2)->(b1.getBname().compareTo(b2.getBname())));
-        System.out.println(listbook);
-
-        LinkedList<String> fruits=new LinkedList<>();
-        fruits.add("mango");
-        fruits.add("banana");
-
-        fruits.add(1,"watermelon");
-//        System.out.println(fruits); output :- [mango,watermelon,banana]
-        fruits.addFirst("pineple");
-//        System.out.println(fruits); output:-[pineple,mango,watermelon,banana]
-        fruits.addLast("peri");
-//        System.out.println(fruits); output:- [pineple,mango,watermelon,banana,peri]
-
-        System.out.println(fruits.getFirst());
-        System.out.println(fruits.getLast());
-        System.out.println(fruits.get(2));
-
-        for(String f:fruits){
-            System.out.println(f);
-        }
-
-        String email="hello@gmail.com";
-        int index=email.indexOf('@');
-        System.out.println("Username :- "+email.substring(0, index));
-        System.out.println("domain :- "+email.substring(index+1));
-
-        listbook.forEach((Book)->{
-            if(Book.getBname()=="aas"){
-                System.out.println(Book);
-            }
-        });
-*/    }
+*/
+    }
 }

@@ -2,6 +2,7 @@ package com.customerAndProductAPI.boot.controller;
 
 import com.customerAndProductAPI.boot.dto.postDTO;
 import com.customerAndProductAPI.boot.model.post;
+import com.customerAndProductAPI.boot.model.tag;
 import com.customerAndProductAPI.boot.service.postServiceimpl;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
@@ -29,5 +30,6 @@ public class postController {
     public List<post> getAllPost(){
         return service.getAllPost();
     }
+
 
 }

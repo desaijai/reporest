@@ -1,0 +1,46 @@
+Set<String> set = new HashSet<>();
+        set.add("element1");
+        set.add("element1");
+        //display only one value
+        System.out.println(set.toString());
+
+        set.add("c");
+        set.add("c+=");
+        set.add("java");
+        set.add("python");
+        set.add("scala");
+        set.add("javascript");
+
+        for (String s : set) {
+            System.out.println(s);
+        }
+        System.out.println("-------------");
+        for (Iterator<String> it = set.iterator(); it.hasNext(); ) {
+            String s = it.next();
+            System.out.println(s);
+        }
+        System.out.println("-------------");
+        Iterator<String> it = set.iterator();
+        while (it.hasNext()) {
+            String s = it.next();
+            System.out.println(s);
+        }
+        System.out.println("-------------");
+        System.out.println("-------------");
+        set.forEach((element) -> {
+            System.out.println(element);
+        });
+        System.out.println("-------------");
+        System.out.println("-------------");
+        System.out.println("-------------");
+        set.stream().filter((element) -> !"java".equals(element)).forEach(System.out::println);
+
+
+        //it is unordered collection
+        System.out.println(set.toString());
+
+
+        //hashset internally use hashmap and it's an unorder it can't following insertion ordered.
+        System.out.println(set);
+    }
+
