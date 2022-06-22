@@ -1,7 +1,6 @@
 package com.customerAndProductAPI.boot.service;
 
 import com.customerAndProductAPI.boot.Exception.resourceNotFound;
-import com.customerAndProductAPI.boot.dto.postDTO;
 import com.customerAndProductAPI.boot.model.post;
 import com.customerAndProductAPI.boot.model.tag;
 import com.customerAndProductAPI.boot.repository.postRepo;
@@ -39,6 +38,11 @@ public class postServiceimpl implements postService{
          listoftag.add(t);
          posts.setTags(listoftag);
         return trepo.save(t);
+    }
+
+    @Override
+    public List<tag> getAllTag() {
+        return trepo.findAll();
     }
 
     //add tag data

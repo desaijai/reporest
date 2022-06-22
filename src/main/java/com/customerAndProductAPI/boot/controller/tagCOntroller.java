@@ -8,8 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/v2")
+@RequestMapping("/api/v1/tag")
 public class tagCOntroller {
 
     postService service;
@@ -22,9 +24,14 @@ public class tagCOntroller {
     @Autowired
     tagRepo trepo;
 
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity<tag> addTag(@RequestBody tag t){
         return new ResponseEntity<>(trepo.save(t),HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public List<tag> getAllTag(){
+        return service.getAllTag();
     }
 
 }

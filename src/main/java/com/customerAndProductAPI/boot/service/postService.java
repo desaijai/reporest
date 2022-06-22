@@ -14,4 +14,7 @@ public interface postService {
 
     public tag addtag(int pid,tag t);
 
+    public List<tag> getAllTag();
+
+
 }

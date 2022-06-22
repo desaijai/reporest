@@ -23,7 +23,6 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
         SpringApplication.run(CustomerAndProductApiApplication.class, args);
         System.out.println("hello world");
 
-
         Map<String,Integer>numbermapping=new HashMap<>();
         numbermapping.put("one", 1);
         numbermapping.put("two", 2);
@@ -33,10 +32,13 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
         numbermapping.put("six", 6);
         System.out.println(numbermapping);
     }
+
+    @Autowired
+    postRepo prepo;
+
     @Override
     public void run(String... args) throws Exception {
- /*
-        post p1=new post("hibernate many to many mapping example with spring boot","hibernate many to many mapping example with spring boot","hibernate");
+     /*   post p1=new post("hibernate many to many mapping example with spring boot","hibernate many to many mapping example with spring boot","hibernate");
 
         tag t1=new tag("hibernate");
         tag t2=new tag("java");
@@ -46,6 +48,10 @@ public class CustomerAndProductApiApplication implements CommandLineRunner {
 
         t1.getPosts().add(p1);
         t2.getPosts().add(p1);
+
+        this.prepo.save(p1);
+ /*
+
 
         this.prepo.save(p1);
 
